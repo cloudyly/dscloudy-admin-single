@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --mode dev",
+    "serve_sit": "vue-cli-service serve --mode sit",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "element-ui": "^2.13.2",
+    "js-cookie": "^2.2.1",
+    "normalize.css": "^8.0.1",
     "vue": "^2.6.11",
+    "vue-i18n": "^8.21.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },

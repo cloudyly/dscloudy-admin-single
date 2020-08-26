@@ -1,0 +1,22 @@
+@import "config";
+@import "element-ui";
+@import "~normalize.css/normalize.css";
+
+html, body, #app, .site {
+  width: 100%;
+  height: 100%;
+  min-width: $pageMinWidth;
+  min-height: $pageMinHeight;
+  overflow: scroll;
+  margin: 0 !important;
+  padding: 0 !important;;
+  font-family: "PingFangSC-Regular", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif";
+  background-color: $color10;
+}
+
+.mt10 {
+  margin-top: 10px !important;
+}
+.full-width {
+  width: 100%;
+}
