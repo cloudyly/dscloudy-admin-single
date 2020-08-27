@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <ds-svg-icon icon="home" class-name="demo"></ds-svg-icon>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -28,5 +29,9 @@
       color: #42b983;
     }
   }
+}
+.demo {
+  font-size: 30px;
+  color: red !important;
 }
 </style>
