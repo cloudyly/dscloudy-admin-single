@@ -7,12 +7,18 @@ import ElementUI from 'element-ui'
 import '@/assets/scss/index.scss'
 import DSComponent from '@/components'
 import '@/icons/index'
+import rules from '@/common/rules'
+import moduleCore from '@/modules/core'
+
+Vue.use(moduleCore, store)
 
 Vue.use(ElementUI, {
   size: 'mini',
   i18n: (key, value) => i18n.t(key, value)
 })
 Vue.use(DSComponent)
+
+Vue.prototype.commonRules = rules
 
 Vue.config.productionTip = false
 
