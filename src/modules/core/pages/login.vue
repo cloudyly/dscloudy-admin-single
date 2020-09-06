@@ -20,7 +20,8 @@
               </el-input>
             </el-form-item>
             <el-form-item prop="validCode">
-              <el-input v-model="loginForm.validCode" :placeholder="$t('core.login.validCodePlaceHolder')">
+              <el-input v-model="loginForm.validCode" :placeholder="$t('core.login.validCodePlaceHolder')"
+                        @keyup.enter.native="onLoginBtnClick">
                 <ds-svg-icon slot="prefix" class-name="login-form-icon" icon="valid-code"></ds-svg-icon>
                 <span slot="suffix">
                   <img v-if="this.key" :src="validCodeUrl" @click="onCheckCodeClick" class="valid-code-img">
@@ -36,6 +37,7 @@
 </template>
 
 <script>
+import * as coreApi from '../api/core-api'
 export default {
   name: 'login',
   data () {
@@ -72,7 +74,10 @@ export default {
       if (!valid) {
         return
       }
-      console.log('表单校验通过，提交数据')
+      // 表单校验通过，提交数据
+      const param = { ...this.loginForm }
+      const result = await coreApi.login(param)
+      console.log(result)
     }
   }
 }

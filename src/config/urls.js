@@ -9,6 +9,7 @@ const urls = {
    * 核心模块
    */
   core: {
+    login: `${config.host.core}/login`, // 登录
     test: `${config.host.core}/test`
   },
 

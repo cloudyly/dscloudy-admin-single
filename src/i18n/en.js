@@ -2,7 +2,10 @@ import core from '@/modules/core/i18n/index'
 
 export default {
   app: {
-    appName: 'Micro Service Micro Front Platform'
+    appName: 'Micro Service Micro Front Platform',
+    loadingText: 'Loading ...',
+    requestSendError: 'Request Error, Please refresh page and try again',
+    requestTimeoutError: 'Request Timeout, please try it latter'
   },
   valid: {
     notNull: ' Not Blank',
