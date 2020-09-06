@@ -8,6 +8,7 @@ import '@/assets/scss/index.scss'
 import DSComponent from '@/components'
 import '@/icons/index'
 import rules from '@/common/rules'
+import config from '@/config'
 import moduleCore from '@/modules/core'
 
 Vue.use(moduleCore, store)
@@ -21,6 +22,10 @@ Vue.use(DSComponent)
 Vue.prototype.commonRules = rules
 
 Vue.config.productionTip = false
+
+if (config.isMock) {
+  require('@/mock')
+}
 
 new Vue({
   router,
