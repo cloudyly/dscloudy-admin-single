@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import * as coreApi from '../api/core-api'
 export default {
   name: 'login',
   data () {
@@ -76,8 +75,12 @@ export default {
       }
       // 表单校验通过，提交数据
       const param = { ...this.loginForm }
-      const result = await coreApi.login(param)
-      console.log(result)
+      this.$store.dispatch('user/login', param).then(resp => {
+        console.log(resp)
+        this.$router.replace('/')
+      }).catch(error => {
+        console.error(error)
+      })
     }
   }
 }
