@@ -1,4 +1,4 @@
-import * as coreApi from '../api/core-api'
+import * as coreApi from '@/modules/core/api/core-api'
 
 const user = {
   namespaced: true,

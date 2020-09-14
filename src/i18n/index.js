@@ -43,10 +43,12 @@ const getBrowserLang = function () {
  */
 const getLanguage = () => {
   const lang = cookie.get('language')
+  console.log('cookie: ', lang)
   if (lang) {
     return lang
   }
   const defaultLang = getBrowserLang()
+  console.log('default: ', lang)
   cookie.set('language', defaultLang)
   return defaultLang
 }

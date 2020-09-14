@@ -1,5 +1,8 @@
 <template>
   <div class="site">
+    <div class="toolbar">
+      <ds-language-select></ds-language-select>
+    </div>
     <div class="login-container">
       <div class="title">{{ $t('app.appName') }}</div>
       <div class="login-wrap">
@@ -95,6 +98,13 @@ export default {
     background-size: 100% 100%;
     @include flex-col(center, center);
     color: $color6;
+    position: relative;
+
+    .toolbar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
 
     .login-container {
       width: 100%;

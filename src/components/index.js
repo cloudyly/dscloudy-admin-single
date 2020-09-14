@@ -1,7 +1,9 @@
 import DsSvgIcon from './ds-svg-icon'
+import DsLanguageSelect from './ds-language-select'
 
 const DSComponents = [
-  DsSvgIcon
+  DsSvgIcon,
+  DsLanguageSelect
 ]
 
 function plugin (Vue) {

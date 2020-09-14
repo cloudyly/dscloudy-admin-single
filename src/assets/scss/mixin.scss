@@ -27,3 +27,12 @@
   box-shadow: 0 1px 7px 0 rgba(0,0,0,0.04);
   box-sizing: border-box;
 }
+
+@mixin svg-icon($color: $color8, $fontSize: 20px) {
+  color: $color;
+  font-size: $fontSize;
+
+  &:hover {
+    color: $colorM1;
+  }
+}
