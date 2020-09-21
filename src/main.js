@@ -10,6 +10,7 @@ import '@/icons/index'
 import rules from '@/common/rules'
 import config from '@/config'
 import moduleCore from '@/modules/core'
+import langUtils from '@/common/lang'
 
 Vue.use(moduleCore, store)
 
@@ -20,6 +21,7 @@ Vue.use(ElementUI, {
 Vue.use(DSComponent)
 
 Vue.prototype.commonRules = rules
+Vue.prototype.getText = langUtils.getText
 
 Vue.config.productionTip = false
 

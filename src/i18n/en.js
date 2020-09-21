@@ -5,7 +5,9 @@ export default {
     appName: 'Micro Service Micro Front Platform',
     loadingText: 'Loading ...',
     requestSendError: 'Request Error, Please refresh page and try again',
-    requestTimeoutError: 'Request Timeout, please try it latter'
+    requestTimeoutError: 'Request Timeout, please try it latter',
+    changePwd: 'Change Password',
+    logout: 'Sign Out'
   },
   icon: {
     changeLanguage: 'Change Language',
