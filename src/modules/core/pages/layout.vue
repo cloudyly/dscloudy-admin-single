@@ -4,7 +4,9 @@
       <ds-layout-header></ds-layout-header>
     </div>
     <div class="content">
-      <div class="left"></div>
+      <div class="left" :class="isMenuOpen ? 'left-width-max' : 'left-width-min'">
+        <ds-layout-sider></ds-layout-sider>
+      </div>
       <div class="main"></div>
     </div>
   </div>
@@ -16,6 +18,11 @@ export default {
   data () {
     return {
       token: this.$store.getters['user/token']
+    }
+  },
+  computed: {
+    isMenuOpen () {
+      return this.$store.getters['app/isMenuOpen']
     }
   }
 }
@@ -40,8 +47,16 @@ export default {
 
       .left {
         transition: width .3s;
-        background-color: $color14;
+        background-color: $color5;
+        //width: $leftWidthMax;
+      }
+
+      .left-width-max {
         width: $leftWidthMax;
+      }
+
+      .left-width-min {
+        width: $leftWidthMin;
       }
 
       .main {

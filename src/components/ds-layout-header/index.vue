@@ -51,25 +51,33 @@ export default {
   data () {
     return {
       version: require('../../../package').version || '1.0.0',
-      activeIndex: 'module_A',
-      modules: [
-        { icon: 'home', titleZh: '模块A', titleEn: 'Module A', code: 'module_A' },
-        { icon: 'home', titleZh: '模块B', titleEn: 'Module B', code: 'module_B' },
-        { icon: 'home', titleZh: '模块C', titleEn: 'Module C', code: 'module_C' }
-      ],
       userInfo: {
         name: '测试用户'
       }
     }
   },
+  mounted () {
+  },
   methods: {
     onTopMenuSelect (key) {
-      this.activeIndex = key
+      this.$store.commit('route/setCurrentModuleCode', key)
     },
     logout () {
       window.sessionStorage.clear()
       window.localStorage.clear()
       window.location.href = '/login'
+    }
+  },
+  computed: {
+    modules () {
+      const moduleList = this.$store.getters['user/privileges'] || []
+      return moduleList.filter(module => module.isModule && !module.isHidden)
+    },
+    activeIndex () {
+      if (!this.$store.getters['route/currentModuleCode']) {
+        this.$store.commit('route/setCurrentModuleCode', this.modules[0].code)
+      }
+      return this.$store.getters['route/currentModuleCode']
     }
   }
 }

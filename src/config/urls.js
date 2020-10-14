@@ -10,6 +10,7 @@ const urls = {
    */
   core: {
     login: `${config.host.core}/login`, // 登录
+    privileges: `${config.host.core}/privileges`, // 获取用户的权限
     test: `${config.host.core}/test`
   },
 
