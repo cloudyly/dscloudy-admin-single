@@ -4,15 +4,11 @@ const user = {
   namespaced: true,
 
   state: {
-    token: '',
-    privileges: []
+    token: ''
   },
   mutations: {
     setToken (state, token) {
       state.token = token
-    },
-    setPrivilege (state, privileges) {
-      state.privileges = privileges
     }
   },
   actions: {
@@ -20,10 +16,6 @@ const user = {
       try {
         const token = await coreApi.login(params)
         context.commit('setToken', token)
-
-        const privileges = await coreApi.getPrivileges()
-        console.log(privileges)
-        context.commit('setPrivilege', privileges || [])
         return Promise.resolve(token)
       } catch (e) {
         return Promise.reject(e)
@@ -31,8 +23,7 @@ const user = {
     }
   },
   getters: {
-    token: state => state.token,
-    privileges: state => state.privileges
+    token: state => state.token
   }
 }
 
